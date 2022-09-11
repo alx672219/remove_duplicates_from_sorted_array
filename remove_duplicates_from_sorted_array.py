@@ -5,11 +5,13 @@ def removeDuplicates(self, nums: List[int]) -> int:
     :type nums: List[int]
     :rtype: int
     """
-    len_ = 1
     if len(nums) == 0:
         return 0
+    
+    insert_index = 1
+    
     for i in range(1, len(nums)):
-        if nums[i] != nums[i-1]:
-            nums[len_] = nums[i]
-            len_ +=1
-    return len_
+        if nums[i] != nums[i - 1]:
+            nums[insert_index] = nums[i]
+            insert_index += 1
+    return insert_index
